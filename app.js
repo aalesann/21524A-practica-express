@@ -3,6 +3,8 @@
 const express = require('express')
 const cors = require('cors');
 const morgan = require('morgan');
+const path = require('path');
+require('ejs');
 
 const app = express()
 
@@ -14,18 +16,16 @@ app.use(cors({
 app.use(morgan("dev"))
 app.use(express.json()) // Para que el servidor comprenda datos en formato json
 
+app.set('view engine', 'ejs')
+
 // Archivos estáticos - (carpeta pública)
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Rutas
+app.use(require('./routes/blog.routes'))
+app.use(require('./routes/user.routes'))
+
+
 
 // Servidor en esucha
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
-
-app.get('/ruta-protegida',  (req, res) => {
-
-   res.send({ name: "Alejandro"})
-})
-
 app.listen(3000, () => console.log(`Servidor corriendo en http://localhost:3000`))
