@@ -4,9 +4,21 @@ const express = require('express')
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
+const { sequelize, conectarDB } = require('./database');
 require('ejs');
 
 const app = express()
+
+// Alternativa de conexión 1
+conectarDB();
+
+// Alternativa de conexión 2
+// Conexión a BD
+// sequelize.authenticate()
+//     .then(() => console.log('Conexión a BD exitosa'))
+//     .catch((error)=> console.log(error))
+
+
 
 // Middlwares
 app.use(cors({

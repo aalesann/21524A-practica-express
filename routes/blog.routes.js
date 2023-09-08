@@ -1,6 +1,7 @@
 // const router = require('express').Router();
 
 const { Router } = require('express');
+const { getPosts, newPost } = require('../controllers/blog.controllers');
 const router = Router()
 
 
@@ -23,11 +24,11 @@ const users = [
 ]
 
 router.get('/', function (req, res) {
-    res.render('home', { users})
+    res.render('home', { users })
 })
 
-router.get('/obtener-usuarios',  (req, res) => { 
-    res.json(users)
-})
+router.post('/nueva-publicacion', newPost)
+
+router.get('/obtener-publicaciones', getPosts )
 
 module.exports = router;
