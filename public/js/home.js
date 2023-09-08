@@ -10,8 +10,7 @@
 // });
 
 
-// Se obtiene la referencia al elemento html (botón html)
-const btnUsers = document.querySelector('.btn-get-users')
+
 
 
 const mostrarDatos = (users, elemento) => {
@@ -29,6 +28,8 @@ const mostrarDatos = (users, elemento) => {
     elemento.innerHTML = registros
 }
 
+// Se obtiene la referencia al elemento html (botón html)
+const btnUsers = document.querySelector('.btn-get-users')
 
 // Se añade un evento que escucha cuando el usuario hace clic en el botón
 btnUsers.addEventListener('click', async () => {

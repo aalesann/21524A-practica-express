@@ -23,7 +23,7 @@ const users = [
 ]
 
 router.get('/', function (req, res) {
-    res.render('home', { users })
+    res.render('home', { users})
 })
 
 router.get('/obtener-usuarios',  (req, res) => { 
