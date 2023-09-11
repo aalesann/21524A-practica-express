@@ -1,0 +1,49 @@
+<%-include("partials/header") %>
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="vh-100">
+
+    <%-include("partials/navbar") %>
+
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center">Nueva Publicación</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <form action="#" id="form-nuevo">
+                        <div class="mb-3">
+                            <input type="text" id="titulo" placeholder="titulo" class="form-control">
+                        </div>
+                       
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="detalle"
+                                style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Detalle</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" id="url_imagen" placeholder="url_imagen" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="date" id="fecha_publicacion" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            Guardar
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+
+    <script src="/js/admin.js" type="module"></script>
+
+    <%-include("partials/footer") %>

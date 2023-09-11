@@ -28,8 +28,6 @@ const Publicacion = sequelize.define('Publicacion', {
     tableName: 'publicaciones'
 });
 
-// Publicacion.sync({ force: true })
-
 module.exports = Publicacion;
 
 

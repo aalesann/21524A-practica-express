@@ -4,10 +4,22 @@ const { Router } = require('express');
 const { getPosts, newPost, updatePost, deletePost } = require('../controllers/blog.controllers');
 const router = Router()
 
+// =====================================
+//      RUTAS PARA RENDERIZAR VISTAS
+// =====================================
 
-router.get('/', function (req, res) {
-    res.render('home')
+router.get('/', (req, res) => {
+    res.render('index')
 })
+
+router.get('/admin', (req, res) => {
+    res.render('admin')
+})
+
+
+// =====================================
+//      RUTAS PARA MANEJAR DATOS
+// =====================================
 
 router.get('/publicaciones', getPosts)
 
