@@ -1,34 +1,21 @@
 // const router = require('express').Router();
 
 const { Router } = require('express');
-const { getPosts, newPost } = require('../controllers/blog.controllers');
+const { getPosts, newPost, updatePost, deletePost } = require('../controllers/blog.controllers');
 const router = Router()
 
 
-const users = [
-    {
-        username: "zx",
-        name: "Zeus",
-        lastname: "Sanabria"
-    },
-    {
-        username: "johnw",
-        name: "Jhon",
-        lastname: "Wick"
-    },
-    {
-        username: "lauras",
-        name: "Laura",
-        lastname: "Smith"
-    }
-]
-
 router.get('/', function (req, res) {
-    res.render('home', { users })
+    res.render('home')
 })
 
-router.post('/nueva-publicacion', newPost)
+router.get('/publicaciones', getPosts)
 
-router.get('/obtener-publicaciones', getPosts )
+router.post('/publicacion', newPost)
+
+router.put('/publicacion/:id', updatePost)
+
+router.delete('/publicacion/:id', deletePost)
+
 
 module.exports = router;
